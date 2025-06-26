@@ -19,7 +19,9 @@ export default async function page() {
                         <p className="text-[10px]">Terakhir pesan diterima pada pukul 03.45</p>
                     </div>
                 </div>
-                <ModalTriggerClient/>
+                <ModalTriggerClient source="page">
+                    Summarize
+                </ModalTriggerClient>
             </div>
             {/* Chat */}
             <div className="overflow-y-scroll h-full flex flex-col max-md:gap-y-5 p-2">

@@ -1,23 +1,34 @@
 'use client';
-
 import { useState } from 'react';
 import Modal from '@/app/ui/modal';
 import { Button } from './button';
+import SummarizeContent from './modalSummarize';
+import ContactformContent from './modalAddContact';
 
-export default function ModalTriggerClient() {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  source: 'layout' | 'page';
+}
+
+export default function ModalTriggerClient({source, children}: ButtonProps) {
   const [showModal, setShowModal] = useState(false);
+
+  const renderContent = () => {
+    if (source === 'layout') return <ContactformContent/>;
+    if (source === 'page') return <SummarizeContent />;
+    return null;
+  };
 
   return (
     <div className="mt-4">
       <Button 
       onClick={() => setShowModal(true)}
                 className="w-[120px] flex mt-[-16px]">
-                    <p className="m-auto">Summarize</p>
+                    <p className="m-auto">{children}</p>
                 </Button>
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <h2 className="text-xl font-semibold mb-2 text-gray-700">Summarize</h2>
-        <p className="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque omnis quos deleniti vitae enim modi quasi doloribus earum id animi ea voluptatibus dolorem veritatis placeat blanditiis dolore consectetur, est aperiam necessitatibus sequi at iste quia vero rem! Laborum atque odit minus! Placeat officiis quisquam est deserunt aliquid sequi magnam possimus..</p>
+        {renderContent()}
       </Modal>
     </div>
   );
