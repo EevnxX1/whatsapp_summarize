@@ -1,8 +1,32 @@
+import Input from "./input";
+import { Button } from "./button";
 export default function ContactformContent() {
     return (
         <>
         <h2 className="text-xl font-semibold mb-2 text-gray-700">Add Contact</h2>
-        <p className="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque omnis quos deleniti vitae enim modi quasi doloribus earum id animi ea voluptatibus dolorem veritatis placeat blanditiis dolore consectetur, est aperiam necessitatibus sequi at iste quia vero rem! Laborum atque odit minus! Placeat officiis quisquam est deserunt aliquid sequi magnam possimus..</p>
+        <form action="" method="post">
+            <Input
+            className="mb-3"
+            type="text"
+            name="nameContact"
+            placeholder="Name"
+            >
+            Name Contact
+            </Input>
+            <Input
+            className="mb-3"
+            type="number"
+            name="numberContact"
+            placeholder="Number"
+            >
+            Number Contact
+            </Input>
+            <Button 
+            type="submit"
+            className="mb-2 mt-3 w-32">
+                Submit
+            </Button>
+        </form>
         </>
     );
 }
