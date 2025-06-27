@@ -3,16 +3,18 @@ import clsx from "clsx"
 
 interface labelInput extends React.InputHTMLAttributes<HTMLInputElement> {
   children: React.ReactNode;
+  classLabel: String;
+  classInput: String;
 
 }
 
-export default function Input({children, type, name, placeholder, className}:labelInput) {
+export default function Input({children, type, name, placeholder, className, classLabel, classInput, ...rest}:labelInput) {
   const id = useId()
   return (
     <>
       <div className={clsx("flex flex-col", className)}>
-        <label className="text-black ml-[2px]">{children}</label>
-        <input className="text-black py-1 px-2 outline-1 outline-gray-600 rounded-lg" type={type} name={name} placeholder={placeholder} required/>
+        <label className={clsx("text-black ml-[2px]", classLabel)}>{children}</label>
+        <input className={clsx("text-black py-1 px-2 outline-1 outline-gray-600 rounded-lg", classInput)} type={type} name={name} placeholder={placeholder} required/>
       </div>
     </>
   )

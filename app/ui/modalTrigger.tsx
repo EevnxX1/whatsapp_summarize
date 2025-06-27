@@ -23,7 +23,7 @@ export default function ModalTriggerClient({source, children}: ButtonProps) {
     <div className="mt-4">
       <Button 
       onClick={() => setShowModal(true)}
-                className="w-[120px] flex mt-[-16px]">
+                className="w-[120px] flex mt-[-16px] bg-green-400">
                     <p className="m-auto">{children}</p>
                 </Button>
 

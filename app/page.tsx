@@ -1,36 +1,50 @@
+import Form from "./ui/form";
+import Input from "./ui/input";
+import { Button } from "./ui/button";
+import Link from "next/link";
+
 export default function page() {
   return(
-    <main>
-            <div className="h-screen bg-gray-200 py-20 p-4 md:p-20 lg:p-32">
-    <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg mx-auto">
-        <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Welcome Back!</h2>
-            <p className="text-gray-700 mb-6">Please sign in to your account</p>
-            <form method="POST">
-                <div className="mb-4">
-                    <label className="block text-gray-700 font-bold mb-2">
-            Username
-          </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"/>
-                </div>
-                <div className="mb-6">
-                    <label className="block text-gray-700 font-bold mb-2">
-            Password
-          </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password"/>
-                </div>
-                <div className="flex items-center justify-between">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-            Sign In
-          </button>
-                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="register">
-                        Register
-                    </a>
-                </div>
-            </form>
-        </div>
+    <Form
+    title="Whatsapp Sistem"
+    description="Please Sign In Your Account"
+    action=''
+    method="POST"
+    >
+    <div className="input-form">
+        <Input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="mb-1"
+        classInput="text-white text-xs py-2"
+        classLabel="text-white mb-1"
+        >
+        Email
+        </Input>
+        <Input
+        type="password"
+        name="password"
+        placeholder="Password"
+        className=""
+        classInput="text-white text-xs py-2"
+        classLabel="text-white"
+        >
+        Password
+        </Input>
     </div>
-</div>
-        </main>
+    <div className="button-form">
+        <Button className="bg-green-400">
+            <p className="">Sign In</p>
+        </Button>
+        <Link
+        key={'register'}
+        href={'/register'}
+        className="button-regis"
+        >
+        <p>Register</p>
+        </Link>
+    </div>
+    </Form>
   );
 }

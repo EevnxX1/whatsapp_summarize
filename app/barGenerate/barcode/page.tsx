@@ -4,13 +4,12 @@ export default function page() {
     return(
         <>
         <Head>
-            <title>Barcode Scan</title>
-            <meta name="Scan Barcode" content="Scanner barcode whatsaap"/>
+            <title>Barcode</title>
         </Head>
-        <main className="m-auto ">
-            <h1>Scan QR Code</h1>
+        <main className="m-auto flex flex-col justify-center items-center w-screen h-screen">
+            <h1 className="text-center mb-5">Scan QR Code</h1>
             <Image
-            src="/profile/user.png"
+            src="/barcode.png"
             alt=""
             width={200}
             height={200}

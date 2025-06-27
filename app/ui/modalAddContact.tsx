@@ -10,6 +10,8 @@ export default function ContactformContent() {
             type="text"
             name="nameContact"
             placeholder="Name"
+            classLabel={''}
+            classInput={''}
             >
             Name Contact
             </Input>
@@ -18,12 +20,14 @@ export default function ContactformContent() {
             type="number"
             name="numberContact"
             placeholder="Number"
+            classLabel={''}
+            classInput={''}
             >
             Number Contact
             </Input>
             <Button 
             type="submit"
-            className="mb-2 mt-3 w-32">
+            className="mb-2 mt-3 w-32 bg-green-400">
                 Submit
             </Button>
         </form>
