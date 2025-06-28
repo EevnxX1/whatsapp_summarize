@@ -72,7 +72,7 @@ export default function NavLinks() {
                 <div className='w-[85%] flex flex-col justify-center gap-y-1'>
                     <div className='flex justify-between'>
                         <h1 className='text-sm font-bold truncate'>{contact.name}</h1>
-                        <p className='text-[10px] self-center'>{contact.created_at}</p>
+                        <p className='text-[10px] self-center'>{new Date(contact.created_at).toLocaleTimeString()}</p>
                     </div>
                     <p className='text-xs truncate'>Klik Untuk Melihat Isi Pesan</p>
                 </div>
