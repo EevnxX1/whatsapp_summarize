@@ -35,6 +35,7 @@ export default function ContactformContent() {
       const data = await res.json();
       if (res.status === 201 || res.status === 200) {
         toast.success("Kontak berhasil ditambahkan!");
+        window.location.reload();
         // kosongkan input
         setName("");
         setPhone("");
